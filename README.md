@@ -3,6 +3,8 @@
 Sitio del Dr. Federico Corujo, oftalmólogo (Uruguay). Estático, sin dependencias, optimizado para buscadores y motores de IA (SEO + GEO).
 
 - Plan y roadmap: [`docs/PLAN-SEO-GEO.md`](docs/PLAN-SEO-GEO.md)
+- Captación de cirugías (auditoría, estrategia, KPIs): [`docs/MARKETING-CATARATAS.md`](docs/MARKETING-CATARATAS.md) · kits operativos en [`marketing/`](marketing/)
+- Skills de Claude Code: `/contenido-paciente`, `/responder-resena`, `/reporte-captacion` (`.claude/skills/`)
 - Importar contenido del sitio actual: `python3 site/import_existing.py https://drcorujo.uy`
 - Datos de la entidad (NAP, perfiles): [`site/config.json`](site/config.json)
 - Páginas: `site/pages/` (front matter JSON + HTML)
