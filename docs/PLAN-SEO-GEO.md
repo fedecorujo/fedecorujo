@@ -1,17 +1,31 @@
 # Plan SEO + GEO drcorujo.uy — versión corregida
 
-Estado al 24-10-2026. Objetivo: que Google y los LLMs (ChatGPT, Gemini, Perplexity, Claude) reconozcan y citen al Dr. Federico Corujo como cirujano de cataratas en Uruguay, con **< 2 h/mes de tu tiempo** después del setup.
+Estado al 24-10-2026 (rev. 2). Objetivo: que Google y los LLMs (ChatGPT, Gemini, Perplexity, Claude) reconozcan y citen al Dr. Federico Corujo como cirujano de cataratas en Uruguay, con **< 2 h/mes de tu tiempo** después del setup.
 
 ---
 
-## 0. Diagnóstico (lo que el plan original no vio)
+## 0. Diagnóstico (corregido)
+
+> Corrección: la primera versión decía que drcorujo.uy no resolvía en DNS. Era un bloqueo de red del entorno de trabajo, no del sitio. **El sitio está online** con blog, FAQ, método, precios de lente multifocal y consultas en Montevideo · San José de Mayo · Libertad.
 
 | Hallazgo | Impacto |
 |---|---|
-| **drcorujo.uy no resuelve en DNS** (ENOTFOUND al 24-10-2026) | Bloqueante. No hay nada que auditar ni que indexar. Las Fases 1-2 del plan original asumían un sitio existente. |
-| La entidad "Federico Corujo oftalmólogo" **no aparece** en búsqueda web; lo único indexado es LinkedIn (figura en San José, no Montevideo). | Para los LLMs hoy no existís como entidad médica. El problema no es optimizar, es **crear la entidad**. |
-| El apellido colisiona con Mathías Corujo (futbolista). | Desambiguación obligatoria: usar siempre "Dr. Federico Corujo, oftalmólogo" + schema con `sameAs`. |
-| Ciudad inconsistente (LinkedIn: San José / plan: Montevideo). | Rompe el NAP. Definir **una** dirección principal y replicarla igual en todos lados. |
+| Google indexa prácticamente **solo la home** de drcorujo.uy (búsqueda `site:` devuelve 1 resultado). | El blog existe pero no rankea ni alimenta a los LLMs. Prioridad: indexación del blog (sitemap, enlaces internos, Search Console). |
+| La entidad "Federico Corujo oftalmólogo" casi no aparece fuera del sitio; LinkedIn sin especialidad clara. | Para los LLMs la entidad es débil. Hay que consolidarla con perfiles externos y schema `sameAs`. |
+| El apellido colisiona con Mathías Corujo (futbolista). | Desambiguación: "Dr. Federico Corujo, cirujano oftalmólogo" + schema. |
+| Tres ciudades de consulta. | Una ficha de Google Business Profile por sede, NAP idéntico al sitio. |
+| El sitio publica cifras propias (">5.000 cirugías", ">98 % satisfacción"). | Revisar contra Ley 19.286 / Colegio Médico: datos de casuística sí, porcentajes de satisfacción sin metodología citable no. Bien documentadas, son el "dato propio" más citable por un LLM. |
+
+## Migración del contenido existente
+
+`site/import_existing.py` lee el `sitemap.xml` del sitio actual, extrae cada página/artículo (título, descripción, fechas, cuerpo sin menú ni scripts) y lo convierte al formato del repo **conservando la misma URL**. Se ejecuta una vez desde tu Mac:
+
+```bash
+python3 site/import_existing.py https://drcorujo.uy
+python3 site/build.py
+```
+
+Después: (1) Claude Code agrega a cada artículo el párrafo "answer" inicial y TL;DR por sección; (2) se eliminan las páginas nuevas que dupliquen las existentes (p. ej. si ya existe `/faq/`, se borra `/preguntas-frecuentes/`); (3) se cambia el DNS solo cuando el build nuevo tenga 100 % de las URLs del sitemap actual.
 
 ## 1. Críticas al plan original
 
@@ -40,7 +54,7 @@ Estado al 24-10-2026. Objetivo: que Google y los LLMs (ChatGPT, Gemini, Perplexi
 ## 3. Plan de ejecución (ordenado por apalancamiento)
 
 ### Semana 1 — Existir (tu tiempo: ~2 h; resto delegable a secretaria)
-1. **Dominio/DNS** (15 min): verificar registro de drcorujo.uy en NIC.uy (Antel). Apuntar DNS a GitHub Pages: registros `A` a 185.199.108.153 / .109 / .110 / .111 y `CNAME www → fedecorujo.github.io`. En el repo: Settings → Pages → Source: GitHub Actions, custom domain `drcorujo.uy`, Enforce HTTPS.
+1. **Migrar contenido** (ver §0) y **recién después** cambiar DNS (15 min): apuntar DNS a GitHub Pages: registros `A` a 185.199.108.153 / .109 / .110 / .111 y `CNAME www → fedecorujo.github.io`. En el repo: Settings → Pages → Source: GitHub Actions, custom domain `drcorujo.uy`, Enforce HTTPS.
 2. **Completar `site/config.json`** (30 min): todos los `TODO`. Elegir **una** dirección principal.
 3. **Foto profesional** → `site/static/dr-corujo.jpg` (1200×1200, < 200 KB).
 4. **Revisar contenido médico** (45 min): leer las 3 páginas médicas, ajustar a tu protocolo, completar los `TODO` del HTML, poner `"reviewed": true` y `"last_reviewed": "AAAA-MM-DD"`.

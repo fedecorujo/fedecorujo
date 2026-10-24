@@ -90,7 +90,9 @@ def entity_graph(cfg):
         "hasCredential": {"@type": "EducationalOccupationalCredential",
                           "credentialCategory": "Licencia médica",
                           "identifier": cfg["license"]},
-        "worksFor": {"@id": f"{url}/#physician"},
+        "worksFor": [{"@id": f"{url}/#physician"},
+                     *([{"@type": "CollegeOrUniversity", **cfg["works_for_academic"]}]
+                       if cfg.get("works_for_academic") else [])],
         "sameAs": cfg["same_as"],
     }
     physician = {
@@ -114,7 +116,8 @@ def entity_graph(cfg):
         "geo": ({"@type": "GeoCoordinates", "latitude": cfg["geo"]["lat"],
                  "longitude": cfg["geo"]["lng"]} if cfg["geo"]["lat"] else None),
         "openingHours": cfg["opening_hours"],
-        "areaServed": {"@type": "Country", "name": "Uruguay"},
+        "areaServed": [{"@type": "City", "name": l} for l in cfg.get("locations", [])]
+                      or {"@type": "Country", "name": "Uruguay"},
         "hospitalAffiliation": [{"@type": "Hospital", **h} for h in cfg["hospital_affiliations"]],
         "availableService": [
             {"@type": "MedicalProcedure", "name": "Cirugía de cataratas (facoemulsificación)",
@@ -297,7 +300,7 @@ def build(strict=False):
     llms = [f"# {cfg['name']}", "", f"> {cfg['description']}", "",
             "## Datos verificables",
             f"- Especialidad: {cfg['job_title']}",
-            f"- Ubicación: {a['locality'] + ', ' if a.get('locality') else ''}Uruguay",
+            f"- Consultas en: {' · '.join(cfg.get('locations', [])) or 'Uruguay'} (Uruguay)",
             *([f"- Teléfono: {c['telephone']}"] if c.get("telephone") else []),
             *(f"- Afiliación: {h['name']}" for h in c.get("hospital_affiliations", [])),
             *(f"- Perfil: {s}" for s in c.get("same_as", [])),

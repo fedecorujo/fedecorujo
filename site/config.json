@@ -6,14 +6,20 @@
   "given_name": "Federico",
   "family_name": "Corujo",
   "honorific_prefix": "Dr.",
-  "job_title": "Médico oftalmólogo y cirujano ocular",
+  "job_title": "Cirujano oftalmólogo · Cirugía de catarata y lentes intraoculares multifocales",
   "tagline": "Cirugía de cataratas y oftalmología en Uruguay",
-  "description": "Dr. Federico Corujo, médico oftalmólogo y cirujano en Uruguay. Cirugía de cataratas, lentes intraoculares y consulta oftalmológica integral.",
+  "description": "Dr. Federico Corujo, cirujano oftalmólogo en Uruguay especializado en cirugía de catarata premium y lentes intraoculares multifocales. Consultas en Montevideo, San José de Mayo y Libertad.",
   "medical_specialty": "Ophthalmologic",
-  "knows_about": ["Cirugía de cataratas", "Facoemulsificación", "Lentes intraoculares", "Oftalmología"],
+  "knows_about": [
+    "Cirugía de catarata",
+    "Lentes intraoculares multifocales",
+    "Cirugía refractiva",
+    "Facoemulsificación",
+    "Oftalmología"
+  ],
   "image": "/static/dr-corujo.jpg",
-  "telephone": "TODO +598 XXXX XXXX",
-  "whatsapp": "TODO 598XXXXXXXX",
+  "telephone": "+598 98 656 789",
+  "whatsapp": "59898656789",
   "email": "TODO contacto@drcorujo.uy",
   "address": {
     "street": "TODO Calle 1234, consultorio X",
@@ -22,17 +28,35 @@
     "postal_code": "TODO 11300",
     "country": "UY"
   },
-  "geo": {"lat": null, "lng": null},
-  "opening_hours": ["TODO Mo-Fr 09:00-18:00"],
+  "geo": {
+    "lat": null,
+    "lng": null
+  },
+  "opening_hours": [
+    "TODO Mo-Fr 09:00-18:00"
+  ],
   "booking_url": "TODO https://...",
   "hospital_affiliations": [
-    {"name": "TODO Institución 1", "url": "TODO https://..."}
+    {
+      "name": "TODO Institución 1",
+      "url": "TODO https://..."
+    }
   ],
   "alumni_of": [
-    {"name": "TODO Universidad de la República – Facultad de Medicina", "url": "https://www.fmed.edu.uy"}
+    {
+      "name": "TODO Universidad de la República – Facultad de Medicina",
+      "url": "https://www.fmed.edu.uy"
+    }
   ],
   "member_of": [
-    {"name": "TODO Sociedad de Oftalmología del Uruguay", "url": "TODO https://..."}
+    {
+      "name": "Asociación Uruguaya de Oftalmología (ASUO)",
+      "url": "TODO https://..."
+    },
+    {
+      "name": "Sociedad Uruguaya de Cirugía Refractiva y Córnea",
+      "url": "TODO https://..."
+    }
   ],
   "license": "TODO Nº de registro profesional MSP / CJPPU",
   "same_as": [
@@ -42,5 +66,14 @@
     "TODO https://scholar.google.com/citations?user=...",
     "TODO https://orcid.org/0000-...",
     "TODO https://g.page/... (Google Business Profile)"
-  ]
+  ],
+  "locations": [
+    "Montevideo",
+    "San José de Mayo",
+    "Libertad"
+  ],
+  "works_for_academic": {
+    "name": "Universidad CLAEH",
+    "url": "https://universidad.claeh.edu.uy"
+  }
 }

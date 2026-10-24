@@ -3,6 +3,7 @@
 Sitio del Dr. Federico Corujo, oftalmólogo (Uruguay). Estático, sin dependencias, optimizado para buscadores y motores de IA (SEO + GEO).
 
 - Plan y roadmap: [`docs/PLAN-SEO-GEO.md`](docs/PLAN-SEO-GEO.md)
+- Importar contenido del sitio actual: `python3 site/import_existing.py https://drcorujo.uy`
 - Datos de la entidad (NAP, perfiles): [`site/config.json`](site/config.json)
 - Páginas: `site/pages/` (front matter JSON + HTML)
 - Monitor de citaciones en IA: [`geo-monitor/`](geo-monitor/)
