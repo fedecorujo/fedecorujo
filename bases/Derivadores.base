@@ -1,0 +1,18 @@
+# Lee notas de privado/derivadores/ (excluida de git).
+filters:
+  and:
+    - file.inFolder("privado/derivadores")
+views:
+  - type: table
+    name: Red de derivadores
+    order:
+      - file.name
+      - tipo
+      - ciudad
+      - estado
+      - ultima_visita
+      - proximo_contacto
+      - pacientes_derivados
+    sort:
+      - property: proximo_contacto
+        direction: ASC

@@ -78,7 +78,8 @@ Criterio: confiable, sin dependencias riesgosas, automatizable por Claude, costo
 |---|---|---|
 | CRM de pacientes/leads (pipeline consulta → cirugía) | **Notion** (MCP conectado) | ✅ Creado: base "Pipeline Cataratas" |
 | Red de derivadores | **Notion** | ✅ Creado: base "Red de derivadores" |
-| Calendario editorial | **Notion** | ✅ Creado y cargado con 12 publicaciones |
+| Calendario editorial | **Obsidian** (`contenido/` + `bases/Calendario.base`) y Notion | ✅ 12 publicaciones cargadas |
+| Base de conocimiento / centro de operaciones | **Obsidian**: el repo es el vault (`00-Inicio.md`), sincronizado con el plugin Obsidian Git | ✅ Estructura lista; pipeline y derivadores en `privado/` (fuera de git) |
 | Diseño de piezas (posts, flyer óptica, QR reseñas) | **Canva** (MCP conectado) | ✅ Primeras piezas generadas |
 | Redacción con voz de marca + chequeo deontológico | **Skills de proyecto** en `.claude/skills/` | ✅ `contenido-paciente`, `responder-resena`, `reporte-captacion` |
 | Plan de campaña, SEO, competencia | Skills `marketing:*` (campaign-plan, seo-audit, competitive-brief, performance-report) | ✅ Usadas para este plan; reutilizables |

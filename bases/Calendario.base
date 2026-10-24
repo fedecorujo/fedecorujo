@@ -1,0 +1,36 @@
+filters:
+  and:
+    - file.inFolder("contenido")
+properties:
+  note.estado:
+    displayName: Estado
+  note.fecha:
+    displayName: Fecha
+  note.embudo:
+    displayName: Embudo
+views:
+  - type: table
+    name: Calendario
+    order:
+      - fecha
+      - file.name
+      - formato
+      - canales
+      - embudo
+      - estado
+      - mensajes
+    sort:
+      - property: fecha
+        direction: ASC
+  - type: table
+    name: Pendientes
+    filters:
+      and:
+        - estado != "Publicado"
+    order:
+      - fecha
+      - file.name
+      - estado
+    sort:
+      - property: fecha
+        direction: ASC

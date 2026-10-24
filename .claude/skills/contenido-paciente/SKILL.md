@@ -16,5 +16,5 @@ description: Convierte una transcripción, audio transcripto, idea o video del D
    - **Subtítulos** si hay transcripción (frases ≤ 7 palabras).
    - Si el contenido da para artículo: borrador en `site/pages/articulos/<slug>.html` siguiendo el formato de `recuperacion-cirugia-de-cataratas.html` (front matter con `"medical": true, "reviewed": false`, H2 en forma de pregunta, párrafo `answer` y `tldr`, fuentes).
 4. Pasar el **checklist deontológico** de `voz-de-marca.md` y mostrarlo marcado al final.
-5. Si se pide, cargar las piezas en Notion → base "Calendario editorial" con estado "Borrador".
+5. Guardar cada pieza como nota en `contenido/AAAA-MM-DD Título.md` con el front matter de `plantillas/Contenido.md` y `estado: Borrador` (aparece en Obsidian → `bases/Calendario.base`). Si se pide, replicar en Notion → "Calendario editorial".
 Nunca inventar cifras de la práctica: pedir el dato o dejar `[DATO]`.

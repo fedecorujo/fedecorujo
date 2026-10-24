@@ -1,0 +1,31 @@
+# Lee notas de privado/pacientes/ (carpeta excluida de git: datos personales, Ley 18.331).
+filters:
+  and:
+    - file.inFolder("privado/pacientes")
+views:
+  - type: table
+    name: Pipeline
+    order:
+      - file.name
+      - etapa
+      - sede
+      - origen
+      - embudo
+      - lente
+      - proxima_accion
+      - resena
+    sort:
+      - property: proxima_accion
+        direction: ASC
+  - type: table
+    name: Seguimiento vencido
+    filters:
+      and:
+        - proxima_accion <= today()
+        - etapa != "Operado"
+        - etapa != "Perdido"
+    order:
+      - file.name
+      - etapa
+      - proxima_accion
+      - telefono

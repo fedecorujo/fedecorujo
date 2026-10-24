@@ -1,2 +1,7 @@
 dist/
 __pycache__/
+# Obsidian: datos personales y estado local fuera del repo público
+privado/
+.obsidian/workspace*.json
+.obsidian/cache
+.trash/
