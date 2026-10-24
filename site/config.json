@@ -1,0 +1,46 @@
+{
+  "_comment": "Fuente única de verdad del NAP y la entidad. Todo lo que diga TODO debe completarse antes de publicar. Estos mismos datos deben copiarse IDÉNTICOS en Google Business Profile, Doctoralia, LinkedIn, etc.",
+  "site_url": "https://drcorujo.uy",
+  "lang": "es-UY",
+  "name": "Dr. Federico Corujo",
+  "given_name": "Federico",
+  "family_name": "Corujo",
+  "honorific_prefix": "Dr.",
+  "job_title": "Médico oftalmólogo y cirujano ocular",
+  "tagline": "Cirugía de cataratas y oftalmología en Uruguay",
+  "description": "Dr. Federico Corujo, médico oftalmólogo y cirujano en Uruguay. Cirugía de cataratas, lentes intraoculares y consulta oftalmológica integral.",
+  "medical_specialty": "Ophthalmologic",
+  "knows_about": ["Cirugía de cataratas", "Facoemulsificación", "Lentes intraoculares", "Oftalmología"],
+  "image": "/static/dr-corujo.jpg",
+  "telephone": "TODO +598 XXXX XXXX",
+  "whatsapp": "TODO 598XXXXXXXX",
+  "email": "TODO contacto@drcorujo.uy",
+  "address": {
+    "street": "TODO Calle 1234, consultorio X",
+    "locality": "TODO Montevideo",
+    "region": "TODO Montevideo",
+    "postal_code": "TODO 11300",
+    "country": "UY"
+  },
+  "geo": {"lat": null, "lng": null},
+  "opening_hours": ["TODO Mo-Fr 09:00-18:00"],
+  "booking_url": "TODO https://...",
+  "hospital_affiliations": [
+    {"name": "TODO Institución 1", "url": "TODO https://..."}
+  ],
+  "alumni_of": [
+    {"name": "TODO Universidad de la República – Facultad de Medicina", "url": "https://www.fmed.edu.uy"}
+  ],
+  "member_of": [
+    {"name": "TODO Sociedad de Oftalmología del Uruguay", "url": "TODO https://..."}
+  ],
+  "license": "TODO Nº de registro profesional MSP / CJPPU",
+  "same_as": [
+    "https://uy.linkedin.com/in/fcorujo",
+    "TODO https://www.youtube.com/@...",
+    "TODO https://www.doctoralia.com.uy/...",
+    "TODO https://scholar.google.com/citations?user=...",
+    "TODO https://orcid.org/0000-...",
+    "TODO https://g.page/... (Google Business Profile)"
+  ]
+}

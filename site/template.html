@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="robots" content="{{robots}}">
+<link rel="canonical" href="{{canonical}}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="{{site_name}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{og_image}}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/static/styles.css">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{{jsonld}}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/">{{site_name}}</a>
+  <nav aria-label="Principal">
+    <a href="/cirugia-de-cataratas/">Cataratas</a>
+    <a href="/preguntas-frecuentes/">Preguntas</a>
+    <a href="/articulos/">Artículos</a>
+    <a href="/sobre-mi/">Sobre mí</a>
+    <a href="/contacto/">Contacto</a>
+  </nav>
+</header>
+<main>
+{{body}}
+{{reviewed}}
+</main>
+<footer class="site-footer">
+  <p class="nap">{{nap}}</p>
+  <p>{{contact}}</p>
+  <p class="disclaimer">La información de este sitio es educativa y no reemplaza la consulta médica.</p>
+  <p>© {{year}} {{site_name}}</p>
+</footer>
+</body>
+</html>
