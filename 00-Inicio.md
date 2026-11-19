@@ -1,6 +1,6 @@
 # Dr. Corujo — Centro de operaciones
 
-Vault de Obsidian = este repositorio. Lo que Claude Code edita y sube aparece acá vía el plugin **Obsidian Git**.
+Espejo del repo drcorujo dentro del second brain (se actualiza cada hora desde la Mac). Ver [[OBSIDIAN]].
 
 ## Estrategia
 - [[MARKETING-CATARATAS]] — auditoría, embudos, KPIs, decisiones
